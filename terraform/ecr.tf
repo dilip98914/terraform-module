@@ -6,6 +6,7 @@ resource "aws_ecr_repository" "app" {
   }
   force_delete = true
   tags = {
-    Project = var.project_name
-  }
+    Project     = var.project_name
+    Environment = var.environment
+  ManagedBy = "Terraform" }
 }
