@@ -5,6 +5,7 @@ resource "aws_ecs_cluster" "app" {
     value = "enabled"
   }
   tags = {
-    Project = "${var.project_name}"
-  }
+    Project     = var.project_name
+    Environment = var.environment
+  ManagedBy = "Terraform" }
 }

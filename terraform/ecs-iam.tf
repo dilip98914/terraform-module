@@ -13,8 +13,9 @@ resource "aws_iam_role" "ecs_task_execution" {
     ]
   })
   tags = {
-    Project = var.project_name
-  }
+    Project     = var.project_name
+    Environment = var.environment
+  ManagedBy = "Terraform" }
 }
 
 resource "aws_iam_role_policy_attachment" "ecs_task_execution" {
