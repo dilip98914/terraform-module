@@ -44,11 +44,48 @@ resource "aws_security_group" "ecs" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name        = "${var.project_name}-alb"
+    Name        = "${var.project_name}-ecs"
     Project     = var.project_name
     Environment = var.environment
     ManagedBy   = "Terraform"
 
   }
 }
-
+#                  TERRAFORM CONFIG
+#                     *.tf files
+#                  "What I WANT"
+#                        │
+#                        ▼
+#             ┌──────────────────────┐
+#             │                      │
+#             │   TERRAFORM CORE     │
+#             │                      │
+#             │  • Read .tf          │
+#             │  • Read state        │
+#             │  • Build dependency  │
+#             │    graph             │
+#             │  • Compare           │
+#             │  • Generate plan     │
+#             │                      │
+#             └───────┬──────────────┘
+#                     │
+#          ┌──────────┴──────────┐
+#          │                     │
+#          ▼                     ▼
+#   terraform.tfstate       AWS Provider
+#   "What Terraform         "Talk to AWS"
+#    manages"
+#                               │
+#                               ▼
+#                     ┌──────────────────┐
+#                     │  AWS RESOURCES   │
+#                     │                  │
+#                     │ Managed by       │
+#                     │ Terraform        │
+#                     │                  │
+#                     │ ECS              │
+#                     │ ECR              │
+#                     │ IAM              │
+#                     │ Security Groups  │
+#                     │ ALB              │
+#                     └──────────────────┘
