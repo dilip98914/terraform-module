@@ -15,8 +15,8 @@ variable "environment" {
 }
 
 variable "enable_ecs" {
-  type=bool
-  default = false
+  type        = bool
+  default     = false
   description = "Whether to provision ECS"
 }
 variable "enable_lambda" {
