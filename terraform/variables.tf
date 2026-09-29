@@ -1,23 +1,13 @@
+variable "enable_ecs" {
+  type=bool
+  default = false
+  description = "Whether to provision ECS"
+}
 variable "aws_region" {
   type    = string
   default = "us-east-1"
 }
-
-# us-east-1 (N. Virginia).
-
-variable "project_name" {
-  type    = string
-  default = "terraform-module"
-}
-
-variable "environment" {
-  description = "Deployment environment"
-  type        = string
-  default     = "dev"
-}
-
-variable "image_tag" {
-  description = "Docker image tag to deploy"
-  type        = string
-  default     = "initial"
+variable "enable_lambda" {
+  type    = bool
+  default = false
 }

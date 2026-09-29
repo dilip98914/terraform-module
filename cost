@@ -1,0 +1,10 @@
+COST SAFETY RULE
+
+Before provisioning any AWS resource:
+
+1. Check whether it has a Free Tier / credit-covered allowance
+2. Determine whether it has an unavoidable hourly charge
+3. Determine what creates ongoing cost
+4. Define the maximum learning configuration
+5. Define how/when it will be destroyed
+6. Never deploy it blindly
