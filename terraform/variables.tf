@@ -21,5 +21,10 @@ variable "enable_ecs" {
 }
 variable "enable_lambda" {
   type    = bool
-  default = true
+  default = false
+}
+
+variable "enable_sqs" {
+  type    = bool
+  default = false
 }

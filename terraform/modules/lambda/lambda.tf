@@ -9,8 +9,8 @@ resource "aws_lambda_function" "app" {
   memory_size      = 256
   environment {
     variables = {
-      NODE_ENV = "production"
-    BUCKET_NAME = aws_s3_bucket.app.bucket
+      NODE_ENV    = "production"
+      BUCKET_NAME = aws_s3_bucket.app.bucket
     }
   }
   tags = {
